@@ -15,7 +15,6 @@ public interface AccountRepository extends JpaRepository<Account, Long> {
 
     boolean existsByOwnerIdAndCurrency(Long id, String currency);
 
-    //existByOwnerIdAndCurrency
 
     @Lock(LockModeType.PESSIMISTIC_WRITE)
     @Query(value = "SELECT a FROM Account a WHERE a.id = :id")
