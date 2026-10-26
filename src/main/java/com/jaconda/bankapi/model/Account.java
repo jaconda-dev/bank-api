@@ -6,6 +6,7 @@ import lombok.experimental.FieldDefaults;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Entity
 //создается составной уникальный индекс, ключ например 1-USD становится уникальным, дубль прерывется
@@ -17,9 +18,9 @@ import java.time.LocalDateTime;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Account {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "id", nullable = false)
-    Long id;
+    UUID id;
     @Column(name = "owner_id", nullable = false)
     Long ownerId;
     @Column(name = "currency", nullable = false, length = 3)
