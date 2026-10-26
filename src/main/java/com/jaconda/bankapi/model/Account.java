@@ -8,6 +8,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
+//создается составной уникальный индекс, ключ например 1-USD становится уникальным, дубль прерывется
 @Table(name = "accounts", uniqueConstraints = @UniqueConstraint(columnNames = {"owner_id", "currency"}))
 @Getter
 @Setter
