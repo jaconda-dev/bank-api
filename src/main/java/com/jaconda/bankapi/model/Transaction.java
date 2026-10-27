@@ -1,5 +1,6 @@
 package com.jaconda.bankapi.model;
 
+import com.jaconda.bankapi.enums.TransactionStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,11 +16,8 @@ import java.time.LocalDateTime;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Transaction {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    Long id;
+public class Transaction extends BaseEntity{
+
     @Column(name = "from_account_id", nullable = false)
     Long fromAccountId;
     @Column(name = "to_account_id", nullable = false)
@@ -40,9 +38,5 @@ public class Transaction {
         if(status == null){
             status = TransactionStatus.PENDING;
         }
-    }
-
-    public enum TransactionStatus{
-        PENDING, COMPLETED, FAILED
     }
 }

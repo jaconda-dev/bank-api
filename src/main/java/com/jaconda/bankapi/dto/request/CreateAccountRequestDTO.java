@@ -1,4 +1,4 @@
-package com.jaconda.bankapi.dto;
+package com.jaconda.bankapi.dto.request;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -13,7 +13,7 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class CreateAccountRequest {
+public class CreateAccountRequestDTO {
 
     @NotNull(message = "ID владельца обязателен")
     Long ownerId;

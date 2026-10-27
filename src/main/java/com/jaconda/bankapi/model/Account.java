@@ -16,11 +16,8 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Account {
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    @Column(name = "id", nullable = false)
-    UUID id;
+public class Account extends BaseEntity{
+
     @Column(name = "owner_id", nullable = false)
     Long ownerId;
     @Column(name = "currency", nullable = false, length = 3)

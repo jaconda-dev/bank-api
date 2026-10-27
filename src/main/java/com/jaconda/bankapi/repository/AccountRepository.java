@@ -10,12 +10,13 @@ import org.springframework.data.repository.query.Param;
 
 import java.math.BigDecimal;
 import java.util.Optional;
+import java.util.UUID;
 
-public interface AccountRepository extends JpaRepository<Account, Long> {
+public interface AccountRepository extends JpaRepository<Account, UUID> {
 
     boolean existsByOwnerIdAndCurrency(Long id, String currency);
 
-    Optional<Account> findById(Long id);
+    Optional<Account> findById(UUID id);
 
     @Modifying
     @Lock(LockModeType.PESSIMISTIC_WRITE)
