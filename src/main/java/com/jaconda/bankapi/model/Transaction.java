@@ -9,6 +9,7 @@ import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Entity
 @Table(name = "transactions")
@@ -19,9 +20,9 @@ import java.time.LocalDateTime;
 public class Transaction extends BaseEntity{
 
     @Column(name = "from_account_id", nullable = false)
-    Long fromAccountId;
+    UUID fromAccountId;
     @Column(name = "to_account_id", nullable = false)
-    Long toAccountId;
+    UUID toAccountId;
     @Column(name = "amount", nullable = false, precision = 19, scale = 4)
     BigDecimal amount;
     @Column(name = "currency", nullable = false)
